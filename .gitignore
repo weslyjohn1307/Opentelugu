@@ -1,0 +1,42 @@
+# Build & Compilation Artifacts
+**/target/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.msi
+*.nsis
+
+# Whitelist bundled portable OCR engine so clone works out-of-the-box
+!src-tauri/resources/ocr/bin/*.exe
+!src-tauri/resources/ocr/bin/*.dll
+
+# Tauri specific build caches
+src-tauri/target/
+**/gen/
+
+# Logs and environment
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+!.env.example
+
+# OS & Editor temp files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
+~$*
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Large portable OCR binaries for repository distribution (use setup releases instead)
+# Keep tessdata models if desired, or release via GitHub Releases
