@@ -1,0 +1,5 @@
+# GitHub Linguist Overrides
+# Treat the desktop WebView frontend as UI assets so GitHub displays Rust as the primary language
+ui/** linguist-vendored
+docs/screenshots/** linguist-vendored
+src-tauri/tests/fixtures/** linguist-vendored
