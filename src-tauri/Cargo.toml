@@ -1,0 +1,45 @@
+[package]
+name = "opentelugu"
+version = "1.0.0"
+description = "OpenTelugu - Free & Open Source Telugu Unicode to Script Converter"
+authors = ["OpenTelugu Community"]
+license = "MIT"
+repository = "https://github.com/opentelugu/opentelugu"
+edition = "2024"
+rust-version = "1.90"
+
+[lib]
+name = "opentelugu_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.4", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.12.5", features = [] }
+tauri-plugin-log = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-store = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-process = "2"
+base64 = "0.22"
+
+[target.'cfg(windows)'.dependencies.windows-sys]
+version = "0.61"
+features = [
+    "Win32_Foundation",
+    "Win32_System_DataExchange",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Input_KeyboardAndMouse",
+]
+
+[dev-dependencies]
+brotli = "7"
